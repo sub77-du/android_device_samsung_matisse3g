@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common DU stuff.
+$(call inherit-product, vendor/du/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/samsung/matisse3g/full_matisse3g.mk)
@@ -21,4 +21,4 @@ $(call inherit-product, device/samsung/matisse3g/full_matisse3g.mk)
 # Release name
 PRODUCT_RELEASE_NAME := SM-T531
 DEVICE_NAME := matisse3g
-PRODUCT_NAME := cm_matisse3g
+PRODUCT_NAME := du_matisse3g
