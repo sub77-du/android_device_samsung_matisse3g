@@ -20,7 +20,6 @@ TARGET_OTA_ASSERT_DEVICE := matisse3g,matisse3gxx
 DEVICE_PATH := device/samsung/matisse3g
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 TARGET_KERNEL_CONFIG := cyanogenmod_matisse_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := cyanogenmod_matisse3g_defconfig
 
