@@ -1,4 +1,4 @@
-# Copyright (C) 2014 The CyanogenMod Project
+# Copyright (C) 2010 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,13 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit some common DU stuff.
-$(call inherit-product, vendor/du/config/common_full_phone.mk)
+def FullOTA_InstallEnd(info):
 
-# Inherit device configuration
-$(call inherit-product, device/samsung/matisse3g/full_matisse3g.mk)
-
-# Release name
-#PRODUCT_RELEASE_NAME := SM-T531
-DEVICE_NAME := matisse3g
-PRODUCT_NAME := du_matisse3g
+  info.script.Mount("/system")
+  info.script.AppendExtra('set_metadata("/system/bin/qmuxd", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:qmuxd_exec:s0");')
+  info.script.AppendExtra('set_metadata("/system/bin/radish", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");')
+  info.script.Unmount("/system")

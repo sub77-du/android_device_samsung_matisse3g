@@ -15,26 +15,20 @@
 # inherit from matisse-common
 -include device/samsung/matisse-common/BoardConfigCommon.mk
 
-TARGET_OTA_ASSERT_DEVICE := matisse3g,matisse3gxx
+TARGET_OTA_ASSERT_DEVICE := matisse3g,matisse3gxx,matissewifi,matissewifiue,matissewifixx
 
 DEVICE_PATH := device/samsung/matisse3g
 
+ARGET_UNIFIED_DEVICE := true
 # Kernel
 TARGET_KERNEL_CONFIG := cyanogenmod_matisse_defconfig
-TARGET_KERNEL_VARIANT_CONFIG := cyanogenmod_matisse3g_defconfig
-
-# Partitions
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2097152000
-TARGET_USERIMAGES_USE_F2FS := true
+TARGET_KERNEL_VARIANT_CONFIG := cyanogenmod_matissewifi3g_defconfig
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
-
-# Sensors
-TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # inherit from the proprietary version
 -include vendor/samsung/matisse3g/BoardConfigVendor.mk
