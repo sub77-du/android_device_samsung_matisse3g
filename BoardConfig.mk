@@ -15,14 +15,12 @@
 # inherit from matisse-common
 -include device/samsung/matisse-common/BoardConfigCommon.mk
 
-TARGET_OTA_ASSERT_DEVICE := matisse3g,matisse3gxx,matissewifi,matissewifiue,matissewifixx
+TARGET_OTA_ASSERT_DEVICE := matisse3g,matisse3gxx
 
 DEVICE_PATH := device/samsung/matisse3g
 
-ARGET_UNIFIED_DEVICE := true
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_matisse_defconfig
-TARGET_KERNEL_VARIANT_CONFIG := cyanogenmod_matissewifi3g_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := du_matisse3g_defconfig
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
